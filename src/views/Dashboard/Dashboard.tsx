@@ -6,7 +6,8 @@ import { useActions, hackerAction } from "../../actions";
 import { RootState } from "../../redux/reducers";
 
 import {    
-  NewsTable
+  NewsTable,
+  NewsGraph
 } from './components';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -56,8 +57,14 @@ const Dashboard = (props? : any) => {
           totalPage={totalPage}
           setUpVote={handleUpVote}
           setDelete={handleDelete}
+        />        
+      }
+      {
+        news && 
+        <NewsGraph
+          news={news}
         />
-      }      
+      }
     </div>
   );
 };
