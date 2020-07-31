@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { Theme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/styles';
-import { Avatar, Typography } from '@material-ui/core';
+import { Avatar, Typography, Link } from '@material-ui/core';
 import userImg from '../../../../../../assets/images/avatars/avatar_12.png';
 
 interface ProfileProps {
@@ -34,7 +34,9 @@ const Profile = (props: ProfileProps) => {
   const user = {
     name: 'Monty Khanna',
     avatar: `${userImg}`,
-    bio: 'Full Stack Developer'
+    bio: <Link target="_blank" href="https://mackraja.github.io/">
+            Full Stack Developer
+          </Link>
   };
 
   return (
