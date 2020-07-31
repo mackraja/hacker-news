@@ -6,19 +6,29 @@ export interface IRequestParams {
 }
 
 export abstract class ApiService {
+
+  protected getQueryString(params: any) {
+    var esc = encodeURIComponent;
+    return Object.keys(params)
+      .map(k => esc(k) + '=' + esc(params[k]))
+      .join('&');
+  }
+
   protected async executeRequest<T>(params: IRequestParams) {
     return new Promise<T>((resolve, reject) => {      
+      const method = params.method || 'GET';
       let queryString = '';
-      if (params.queryParameters) {        
-        Object.entries(params.queryParameters).forEach(([key, value]) => {
-          queryString += key + '=' + value + '&';
-        });
-        queryString = queryString.slice(0, -1);
-      }
+      let body;
+           
+      if (['GET', 'DELETE'].indexOf(method) > -1 && params.queryParameters) {
+        queryString = '?' + this.getQueryString(params.queryParameters);
+      } else { // POST or PUT 
+        body = JSON.stringify(params.body);
+      }       
 
-      const fetchUrl = params.url + '?' + queryString;
-      
-      fetch(fetchUrl)
+      const fetchUrl = params.url + queryString;
+
+      fetch(fetchUrl, { method, body })
       .then((result: any) => {
         resolve(result.json());
       }).catch((error: any) => {

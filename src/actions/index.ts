@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as hackerAction from './hacker';
 
-export function useActions(actions: any, deps?: any): any {
+export function useActions(actions: any): any {
 	const dispatch = useDispatch();
 	return useMemo(
 		() => {
@@ -12,10 +12,10 @@ export function useActions(actions: any, deps?: any): any {
 			}
 			return bindActionCreators(actions, dispatch);
 		},
-		deps ? [dispatch, ...deps] : deps
+		[dispatch, actions]
 	);
 }
 
-export { 
+export {
 	hackerAction
  }

@@ -21,7 +21,7 @@ function App(props?: any) {
       if (props && Object.keys(props.hacker).length === 0 ) {
         hackerActions.getHackerNews({ page: 1, hitsPerPage: 20, query: "foo", tags: "story" });   
       }
-  }, []);
+  }, [hackerActions, props]);
 
   return (
       <ThemeProvider theme={theme}>

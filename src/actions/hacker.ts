@@ -48,14 +48,14 @@ export const getActionNews = (objectID: string, action: string) => async (dispat
 		if (action === 'upVote') {
 			newMsg = 'Hacker upVote updated';
 			updatedNews = updatedNews.map((v: any) => {
-				if (v.objectID == objectID) {
+				if (v.objectID === objectID) {
 					v.points = v.points + 1;
 				}
 				return v;
 			});
 		} else if (action === 'delete') {
 			newMsg = 'Hacker News deleted';
-			updatedNews = updatedNews.filter((v: any) => v.objectID != objectID);
+			updatedNews = updatedNews.filter((v: any) => v.objectID !== objectID);
 		}
 
 		dispatch({ type: ActionType.ALERT, payload: {
