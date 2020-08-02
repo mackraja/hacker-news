@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import { AppBar, Toolbar, Hidden, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import logoImg from '../../../../assets/images/logos/hacker-news-logo.png';
+import logoImg from '../../../../style/images/logos/hacker-news-logo.png';
 
 interface TopbarProps {
   className?: string,

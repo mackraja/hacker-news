@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Theme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/styles';
 import { Avatar, Typography, Link } from '@material-ui/core';
-import userImg from '../../../../../../assets/images/avatars/avatar_12.png';
+import userImg from '../../../../../../style/images/avatars/avatar_12.png';
 
 interface ProfileProps {
   className?: string,

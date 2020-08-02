@@ -10,7 +10,7 @@ import { RootState } from "./redux/reducers";
 
 import theme from './theme';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import './assets/scss/index.scss';
+import './style/scss/index.scss';
 import { AlertContainer } from "./components";
 
 function App(props?: any) { 
