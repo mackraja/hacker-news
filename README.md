@@ -16,8 +16,8 @@
 
 ##### Dashboard Screen
 
-![Dashboard Screen](/mackraja/hacker-news/blob/master/public/HackerNews.png?raw=true "Dashboard Screen")
+![Dashboard Screen](/public/HackerNews.png?raw=true "Dashboard Screen")
 
 ##### Output Screen
 
-![Output Screen](/mackraja/hacker-news/blob/master/public/hackernewscomile.png?raw=true "Output Screen")
+![Output Screen](/public/hackernewscomile.png?raw=true "Output Screen")
