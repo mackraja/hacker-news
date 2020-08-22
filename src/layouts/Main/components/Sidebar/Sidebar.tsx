@@ -4,6 +4,7 @@ import { Theme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import BrushIcon from '@material-ui/icons/Brush';
 
 import { Profile, SidebarNav } from './components';
 
@@ -47,7 +48,12 @@ const Sidebar = (props: SidebarProps) => {
       title: 'Dashboard',
       href: '/dashboard',
       icon: <DashboardIcon />
-    }    
+    },
+    {
+      title: 'Design One',
+      href: '/designOne',
+      icon: <BrushIcon />
+    }
   ];
 
   return (

@@ -17,7 +17,13 @@ const PublicRoutes = () => {
             exact
             layout={MainLayout}
             path="/dashboard"
-        />        
+        />
+        <RouteWithLayout
+            component={lazy(() => import("../views/DesignOne"))}
+            exact
+            layout={MainLayout}
+            path="/designOne"
+        />
     </Switch>
   )
 };

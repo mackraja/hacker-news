@@ -56,7 +56,7 @@ const Topbar = (props: TopbarProps) => {
           </IconButton>
           <Typography variant="h4" className={classes.title}>
             Hacker News Dashboard
-          </Typography>
+          </Typography>          
           <Hidden lgUp>
           <IconButton
             color="inherit"
