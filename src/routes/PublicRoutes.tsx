@@ -24,6 +24,12 @@ const PublicRoutes = () => {
             layout={MainLayout}
             path="/designOne"
         />
+        <RouteWithLayout
+            component={lazy(() => import("../views/ZoomCall"))}
+            exact
+            layout={MainLayout}
+            path="/zoomCall"
+        />
     </Switch>
   )
 };

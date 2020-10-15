@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import BrushIcon from '@material-ui/icons/Brush';
+import VideoCallIcon from '@material-ui/icons/VideoCall';
 
 import { Profile, SidebarNav } from './components';
 
@@ -53,6 +54,11 @@ const Sidebar = (props: SidebarProps) => {
       title: 'Design One',
       href: '/designOne',
       icon: <BrushIcon />
+    },
+    {
+      title: 'Zoom Call',
+      href: '/zoomCall',
+      icon: <VideoCallIcon />
     }
   ];
 
