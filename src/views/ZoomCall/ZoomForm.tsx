@@ -46,11 +46,11 @@ const ZoomForm = (props) => {
         />
         <Divider />
         <CardContent>
-          <TextField
+        <TextField
             fullWidth
             margin="normal"
-            label="Name"
-            name="name"
+            label="Meeting"
+            name="meeting"
             required            
             variant="outlined"
             inputRef={register}
@@ -58,20 +58,22 @@ const ZoomForm = (props) => {
           <TextField
             fullWidth
             margin="normal"
-            label="Profile"
-            name="profile"                
+            label="Password"
+            name="password"
             required            
             variant="outlined"
             inputRef={register}
           />
+          
           <TextField
             fullWidth
             margin="normal"
-            label="Webinar Title"            
-            name="webinarTitle"
+            label="Role"
+            name="role"                
+            required            
             variant="outlined"
             inputRef={register}
-          />          
+          />   
         </CardContent>
         <Divider />
         <Box p={1}>

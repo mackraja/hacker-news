@@ -21,15 +21,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 type Inputs = {
-  name: string,
-  profile: string,
-  webinarTitle: string
+  meeting: string,
+  password: string,
+  role: string
 };
 
 const ZoomCall = (props: any) => {
   const classes = useStyles();
   const [isFormSubmit, setFormSubmit] = useState(false);
-  const [meetingUrl, setMeetingUrl] = useState('');
   
   const initialSetup = async () => {
     // CDN
@@ -46,18 +45,17 @@ const ZoomCall = (props: any) => {
   }, []);
 
   const zoomFormData = (data: Inputs) => {
-    const { name, profile } = data;
-    if (name && profile) {
+    const { meeting, password, role = 0 } = data;
+    if (meeting && password) {
       setFormSubmit(true);
       const meetingConfig = {
-        mn: '77721163149',
-        name: name,
-        pwd: 'dE1HNngrbEpBemwzREJndkxkRHlRdz09',
-        role: 0,
+        mn: meeting, // '77721163149',
+        pwd: password, // 'dE1HNngrbEpBemwzREJndkxkRHlRdz09',
+        role: role,
         email: "",
         lang: "en",
         signature: '',
-        userName: 'Monty RAJA',
+        userName: 'Mack',
         apiKey: API_KEY
       };
       const signature = ZoomMtg.generateSignature({
@@ -104,16 +102,6 @@ const ZoomCall = (props: any) => {
     });
   };
 
-  const getCurrentDomain = () => {
-    return (
-      window.location.protocol +
-      "//" +
-      window.location.hostname +
-      ":" +
-      window.location.port
-    );
-  };
-
   return (
     <div className={classes.root}>
     <Container maxWidth={false}>
@@ -135,11 +123,6 @@ const ZoomCall = (props: any) => {
                   />
                 </Grid>
             }
-            {/* {
-              isFormSubmit
-              && 
-              <iframe src={meetingUrl} width="540" height="450"></iframe> 
-            } */}
         </Grid>
         </Box>
       </Container>
